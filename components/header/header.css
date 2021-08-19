@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;600&display=swap');
+body{
+    width: 100%;
+    font-size: 16px;
+    margin: 0px;
+}
+.header{
+    height: 5em;
+    margin:0.625em 1.875em;
+    display: flex;
+    justify-content:space-between;
+}
+.header__img{
+    width: 200px;
+}
+.header__menu--profile{
+    display:flex;
+    align-items:center;
+}
+.header__menu-img{
+    margin-right: 8px ;
+}
+.header__menu-texto{
+    margin: 0px;
+    color: white;
+}
+
+.header__menu ul{
+    display: none;
+    list-style: none;
+    padding: 0px;
+    position:absolute;
+    width: 100px;
+    text-align:right;
+    margin: 0px 0px 0px -5px;
+}
+
+.header__menu li{
+    margin: 10px 0px;
+}
+.header__menu a{
+    color: white;
+    text-decoration: none;
+}
+.header__menu a:hover{
+    color: white;
+    text-decoration: none;
+    text-decoration: underline;
+}
+
+.header__menu:hover ul, ul:hover{
+    display: block;
+}

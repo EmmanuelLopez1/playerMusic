@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./login.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <img src="../../images/logo-platzi.png" alt="" class="header__img">
+        <div class="header__menu">
+            <div class="header__menu--profile">
+                <img class="header__menu-img" src="../../images/user-icon.png" alt="user">
+                <p class="header__menu-texto">Perfil</p>
+            </div>
+            <ul class="header__menu--profile">
+                <li><a href="">Cuenta</a></li>
+                <li><a href="">Cerrar Sesion</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    <section class="login">
+        <section tabindex="0" class="login__container">
+            <h2 tabindex="0">Inicia sesion</h2>
+            <form class="login__container--form" action="">
+                <input aria-label="Correo" type="text" class="input" placeholder="Correo">
+                <input aria-label="Contraseña" type="password" class="input" placeholder="Contrasena">
+
+                <button class="button">
+                    Iniciar sesion
+                </button>
+
+                <div class="login__container--remember">
+                    <label>
+                        <input type="checkbox" id="cbox1" value="checkbox">Recuerdame
+                    </label>
+                    <a href="/">Olvide ni password</a>
+                </div>
+            </form>
+
+            <section class="login__container--social-media">
+                <a href=""><img src="https://img.icons8.com/ios/50/000000/google-logo--v1.png"/>Inicia sesion con google</a>
+                <a href=""><img src="https://img.icons8.com/fluency/48/000000/twitter.png"/>Inicia sesion con twitter</a>
+            </section>
+            <p class="login__container--register">
+                No tienes ninguna cuenta <a href="">Registrate</a>
+            </p>
+        </section>
+    </section>
+    <footer class="footer">
+        <a href="">
+            Terminos de uso
+        </a>
+        <a href="">
+            Declaracion de privacidad
+        </a>
+        <a href="">
+            Centro de ayuda
+        </a>
+    </footer>
+</body>
+</html>

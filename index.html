@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a0f72ea1e7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./index.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <header class="header">
+        <img src="./images/logo-platzi.png" alt="" class="header__img">
+        <div class="header__menu">
+            <div class="header__menu--profile">
+                <img class="header__menu-img" src="./images/user-icon.png" alt="user">
+                <p class="header__menu-texto">Perfil</p>
+            </div>
+            <ul class="header__menu--profile">
+                <li><a href="">Cuenta</a></li>
+                <li><a href="">Cerrar Sesion</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="main-section">
+        <section class="main">
+            <h2 class="main__title">
+                Que quieres ver hoy?
+            </h2>
+            <input type="text" placeholder="Buscar..." class="input--main">
+        </section>
+
+        <h2 class="categories__title">Mi lista</h2>
+        <div class="carousel">
+            <div class="carousel">
+                <div class="carousel__buttons">
+                    <button class="carousel__button caruosel__btn-left">
+                        <img src="https://img.icons8.com/dotty/80/000000/arrow-pointing-left.png"
+                            class="carousel__arrow-img" />
+                    </button>
+                    <button class="carousel__button caruosel__btn-right">
+                        <img src="https://img.icons8.com/dotty/80/000000/arrow.png" class="carousel__arrow-img" />
+                    </button>
+                </div>
+                <div class="carousel__container" id="mi-lista">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="player-container">
+        <div class="player-content">
+            <div class="player">
+                <div class="player__img-container">
+                    <img src="https://img.panamericana.pe/noticia/2015/01/640-1421866581284.jpg" alt=""
+                        class="img img--player-bg" />
+                    <i class="fas fa-heart player__icon player__icon--like"></i>
+                </div>
+                <div class="player__info">
+                    <h2 class="player__text player__text--title">Es epico</h2>
+                    <h4 class="player__text player__text--subtitle">Cancerbero</h4>
+                </div>
+
+                <div class="duration">
+                    <input type="range" name="" class="duration__input" min="0" max="100" value="0" />
+                </div>
+
+                <div class="audio-duration">
+                    <p class="player__text player__text--audio audio-start">0:00</p>
+                    <p class="player__text player__text--audio audio-end"></p>
+
+                    <audio class="player__audio" id="audio">
+                    </audio>
+                </div>
+
+                <div class="player__options">
+                    <i class="fas fa-undo-alt player__icon"></i>
+                    <i class="fas fa-chevron-left player__icon"></i>
+                    <i class="fas fa-play player__icon player__icon--play"></i>
+                    <i class="fas fa-chevron-right player__icon"></i>
+                    <i class="fas fa-plus player__icon"></i>
+                </div>
+            </div>
+
+            <div class="suggestions">
+                <label for="ver-mas-check" class="ver-mas">
+                    <i class="fas fa-chevron-down player__icon player__icon--more"></i>
+                </label>
+                <input type="checkbox" name="" id="ver-mas-check" />
+
+                <div class="suggestions__player">
+                    <div class="suggestions__song">
+                        <img src="https://img.panamericana.pe/noticia/2015/01/640-1421866581284.jpg" alt=""
+                            class="img img--suggestions" />
+                        <i class="fas fa-play player__icon player__icon--suggestions"></i>
+
+
+                        <div class="song__info">
+                            <p class="player__text player__text--suggestions">A little more time</p>
+                            <p class="player__text player__text--suggestions">Drake Bell</p>
+                        </div>
+                        <div class="song__icons">
+                            <i class="fas fa-plus player__icon player__icon--song player__icon--song--plus"></i>
+                            <i class="fas fa-heart player__icon player__icon--song player__icon--song--like"></i>
+                        </div>
+                    </div>
+
+                    <div class="suggestions__song">
+                        <img src="https://img.panamericana.pe/noticia/2015/01/640-1421866581284.jpg" alt=""
+                            class="img img--suggestions" />
+                        <i class="fas fa-play player__icon player__icon--suggestions"></i>
+
+
+                        <div class="song__info">
+                            <p class="player__text player__text--suggestions">A little more time</p>
+                            <p class="player__text player__text--suggestions">Drake Bell</p>
+                        </div>
+                    </div>
+
+                    <div class="suggestions__song">
+                        <img src="https://img.panamericana.pe/noticia/2015/01/640-1421866581284.jpg" alt=""
+                            class="img img--suggestions" />
+                        <i class="fas fa-play player__icon player__icon--suggestions"></i>
+
+
+                        <div class="song__info">
+                            <p class="player__text player__text--suggestions">A little more time</p>
+                            <p class="player__text player__text--suggestions">Drake Bell</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <i class="far fa-window-close player__icon player__icon--close"></i>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <a href="">
+            Terminos de uso
+        </a>
+        <a href="">
+            Declaracion de privacidad
+        </a>
+        <a href="">
+            Centro de ayuda
+        </a>
+    </footer>
+</body>
+<script src="./components/carousel/carousel.js" type="module"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="./index.js" type="module"></script>
+
+</html>

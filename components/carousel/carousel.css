@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.carousel{
+    width: auto;
+    position:relative;
+    overflow: scroll;   
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.carousel__container{   
+    display:flex;
+    transition:all .5s;
+    width: 90%;
+    position: relative;  
+    white-space: nowrap;
+    margin: 70px auto;
+    padding: 20px 0px;
+}
+.carousel-item{
+    transition: 450ms;
+    transform-origin: center left;
+    display: inline-block;
+    width: 200px;
+    height:320px;
+    border-radius: 20px;
+    background-color:white;
+    overflow: hidden;
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative;
+}
+.carousel-item-move{
+    transition:all .5s;
+}
+.carousel-item-move:hover  ~ .carousel-item-move>.carousel-item{
+    transform: translate3d(100px, 0,0);
+}
+.carousel__container:hover .carousel-item{
+    opacity: 0.5;
+}
+.carousel__container:hover .carousel-item:hover{
+    transform: scale(1.5);
+    opacity: 1;
+}
+.carousel-item__img{
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+}
+.carousel-item__details{
+    display: flex;
+    align-items: flex-end;
+    background:linear-gradient(to top, rgba(0,0,0.9) 0%, rgba(0,0,0,0)100%);
+    font-size: 10px;
+    opacity:0;
+    transition: 450ms opacity;
+    padding:10px;
+    position:absolute;
+    top: 0;
+    left:0;
+    right:0;
+    bottom: 0;
+}
+.carousel-item__details:hover{
+    opacity:1;
+} 
+.carousel-item__icons{
+    width: 70px;
+    display: flex;
+    justify-content: space-between
+}
+.carousel-item__icon{
+    transition:all .5s;
+    width: 30px;
+    display: block;
+    background-color: white;
+    border-radius: 100%;
+}
+.carousel-item__icon:hover{
+    transform: scale(1.2);
+}
+.carousel-item__details--text{
+    margin: 5px 0px 5px 10px;
+    font-family: 'Vollkorn', serif;
+    font-weight: bold;
+}
+.carousel__buttons{
+    position:absolute;
+    margin:183px 0px 0px 2%;    
+    display:flex;
+    justify-content: space-between;
+    width: 96.5%;
+}
+.carousel__button{
+    transition:all .5s;
+    z-index: 2;
+    width:50px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+.carousel__button:hover{
+    cursor: pointer;
+    transform: scale(1.5);
+}
+.carousel__arrow-img{
+    display: block;
+    width:100%;
+}

@@ -1,0 +1,23 @@
+@import './components/header/header.css';
+@import './components/login/login.css';
+@import './components/registro/registro.css';
+@import './components/main/main.css';
+@import './components/carousel/carousel.css';
+@import './components/footer/footer.css';
+@import './components/reproductor/reproductor.css';
+body{
+    position:relative;
+    overflow-x: hidden;
+    margin: 0px;
+    padding: 0px
+}
+.categories__title{
+    color: white;
+    font-size: 16px;
+    position: absolute;
+    width: 100%;
+    padding-left: 30px;
+}
+.player-container{
+    display: none;
+}

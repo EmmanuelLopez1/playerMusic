@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./reproductor.css" />
+    <script src="https://kit.fontawesome.com/a0f72ea1e7.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="player-container">
+        <div class="player-content">
+            <div class="player">
+                <div class="player__img-container">
+                    <img src="https://img.panamericana.pe/noticia/2015/01/640-1421866581284.jpg" alt="" class="img" />
+                    <i class="fas fa-heart player__icon player__icon--like"></i>
+                </div>
+                <div class="player__info">
+                    <h2 class="player__text player__text--title">Es epico</h2>
+                    <h4 class="player__text player__text--subtitle">Cancerbero</h4>
+                </div>
+
+                <div class="duration">
+                    <input type="range" name="" id="" class="duration__input" min="0" value="0" />
+                </div>
+
+                <div class="audio-duration">
+                    <p class="player__text player__text--audio">0:00</p>
+                    <p class="player__text player__text--audio">3:56</p>
+
+                    <audio class="player__audio" id="audio">
+                        <source type="" />
+                    </audio>
+                </div>
+
+                <div class="player__options">
+                    <i class="fas fa-undo-alt player__icon"></i>
+                    <i class="fas fa-chevron-left player__icon"></i>
+                    <i class="fas fa-play player__icon player__icon--play"></i>
+                    <i class="fas fa-chevron-right player__icon"></i>
+                    <i class="fas fa-plus player__icon"></i>
+                </div>
+            </div>
+
+            <div class="suggestions">
+                <label for="ver-mas-check" class="ver-mas">
+                    <i class="fas fa-chevron-down player__icon player__icon--more"></i>
+                </label>
+                <input type="checkbox" name="" id="ver-mas-check" />
+
+                <div class="suggestions__player">
+                    <div class="suggestions__song">
+                        <img src="https://img.panamericana.pe/noticia/2015/01/640-1421866581284.jpg" alt=""
+                            class="img img--suggestions" />
+                        <i class="fas fa-play player__icon player__icon--suggestions"></i>
+
+
+                        <div class="song__info">
+                            <p class="player__text player__text--suggestions">A little more time</p>
+                            <p class="player__text player__text--suggestions">Drake Bell</p>
+                        </div>
+                        <div class="song__icons">
+                            <i class="fas fa-plus player__icon player__icon--song player__icon--song--plus"></i>
+                            <i class="fas fa-heart player__icon player__icon--song player__icon--song--like"></i>
+                        </div>
+                    </div>
+
+                    <div class="suggestions__song">
+                        <img src="https://img.panamericana.pe/noticia/2015/01/640-1421866581284.jpg" alt=""
+                            class="img img--suggestions" />
+                        <i class="fas fa-play player__icon player__icon--suggestions"></i>
+
+
+                        <div class="song__info">
+                            <p class="player__text player__text--suggestions">A little more time</p>
+                            <p class="player__text player__text--suggestions">Drake Bell</p>
+                        </div>
+                    </div>
+
+                    <div class="suggestions__song">
+                        <img src="https://img.panamericana.pe/noticia/2015/01/640-1421866581284.jpg" alt=""
+                            class="img img--suggestions" />
+                        <i class="fas fa-play player__icon player__icon--suggestions"></i>
+
+
+                        <div class="song__info">
+                            <p class="player__text player__text--suggestions">A little more time</p>
+                            <p class="player__text player__text--suggestions">Drake Bell</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./reproductor.js" type="module"></script>
+</html>

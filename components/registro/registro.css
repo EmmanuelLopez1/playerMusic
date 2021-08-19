@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;600&display=swap');
+@import '../header/header.css';
+@import '../login/login.css';
+body {
+    background:linear-gradient(#0F2027, #2C5364);
+}
+
+@media(max-width:600px){
+    .login__container{
+        max-height:600px;
+        background-color: transparent;
+        border:none;
+        padding: 0px;
+        width:100%;
+    }
+    .footer{
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .footer >a{
+        margin-bottom: 10px;
+    }
+}
+
+
