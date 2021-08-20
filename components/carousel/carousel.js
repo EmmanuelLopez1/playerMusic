@@ -116,7 +116,7 @@ const carousel = class Carousel {
             const items = this.items[i].childNodes
             for (let i = 0; i < items.length; i++) {
                 items[i].addEventListener('click', ()=>{
-                    player.reproducirCancion(contenidoItems[i])  
+                    player.selectSong(contenidoItems, i)
                 })
             }
         }

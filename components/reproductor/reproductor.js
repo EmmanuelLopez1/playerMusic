@@ -2,6 +2,10 @@
 
 export const reproductor = class Reproductor {
     constructor() {
+        this.danger = '#ff152e'
+        this.song = ''
+        this.songs = ''
+        this.playing = false
         //PLAYER INFO
         this.playerClose = $('.player__icon--close')
         this.playerContaier = $('.player-container');
@@ -15,6 +19,8 @@ export const reproductor = class Reproductor {
         this.playerAudio = $('.player__audio')
         this.playerAudioDuration = $('.audio-end')
         this.playerAudioCurrent = $('.audio-start')
+        this.nextSong = $('.player__icon--next')
+        this.beforeSong = $('.player__icon--before')
         this.audioDuration = this.playerAudio[0].duration
         //BAR DURATION
         this.barDuration = $('.duration__input')
@@ -25,8 +31,10 @@ export const reproductor = class Reproductor {
 
         //BUTTONS
         this.playButton = $('.player__icon--play')
-        this.hideReproductor()
+        this.loopButton = $('.player__icon--loop')
+
         this.buttons()
+        this.playNextSong()
     }
     controlTimeBar() {
         this.barDuration[0].max = this.audioDuration
@@ -36,9 +44,16 @@ export const reproductor = class Reproductor {
         })
     }
 
-    reproducirCancion(song) {
+    selectSong(songs, i) {
+        this.songs = songs
+        this.song = i
+        this.hideReproductor()
+        this.reproducirCancion(this.songs, this.song)
+    }
+
+    reproducirCancion(songs, i) {
         this.showReproductor()
-        this.cambiarInfoReproductor(song)
+        this.cambiarInfoReproductor(songs, i)
         this.playAudio()
     }
 
@@ -54,11 +69,11 @@ export const reproductor = class Reproductor {
         })
     }
 
-    cambiarInfoReproductor(song) {
-        this.reproductorImg.attr('src', song.src)
-        this.playerTitle.text(song.name)
-        this.playerSubtitle.text(song.autor)
-        this.playerAudio[0].src = `./audios/${song.song}`
+    cambiarInfoReproductor(songs, i) {
+        this.reproductorImg.attr('src', songs[i].src)
+        this.playerTitle.text(songs[i].name)
+        this.playerSubtitle.text(songs[i].autor)
+        this.playerAudio[0].src = `./audios/${songs[i].song}`
         this.getData(this.playerAudio)
         this.changeBarTime()
     }
@@ -113,18 +128,54 @@ export const reproductor = class Reproductor {
     }
     playAudio() {
         this.playerAudio[0].play()
+
     }
 
     buttons() {
         this.playButton.on('click', () => {
             if (this.playerAudio[0].paused) {
                 this.playerAudio[0].play()
-                console.log('playing');
                 this.playButton.attr('class', 'fas fa-play player__icon player__icon--play')
+                this.playing = true
             } else {
                 this.playerAudio[0].pause()
                 this.playButton.attr('class', 'fas fa-pause-circle player__icon player__icon--play')
+                this.playing = false
             }
         })
+
+        this.loopButton.on('click', () => {
+            if (this.playerAudio[0].loop) {
+                this.playerAudio[0].loop = false
+                this.loopButton[0].style.color = 'white'
+
+            } else {
+                this.playerAudio[0].loop = true
+                this.loopButton[0].style.color = this.danger
+            }
+        })
+
+        this.nextSong.on('click', () => {
+            if (this.song <= this.songs.length) {
+                this.song++
+            }
+            this.selectSong(this.songs, this.song)
+        })
+
+        this.beforeSong.on('click', () => {
+            if (this.song > 0) {
+                this.song--
+            }
+            this.selectSong(this.songs, this.song)
+        })
+    }
+
+    playNextSong(){
+        setInterval(()=>{
+            if(this.playerAudio[0].ended){
+                this.song++
+                this.reproducirCancion(this.songs, this.song)
+            }
+        }, 1000)
     }
 }
